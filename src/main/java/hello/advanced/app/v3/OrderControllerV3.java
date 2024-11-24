@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class OrderControllerV3 {
 
     private final OrderServiceV3 orderServiceV3;
-    private final FieldLogTrace trace;
+    private final LogTrace trace;
 
     @GetMapping("/v3/request")
     public String request(String itemId){

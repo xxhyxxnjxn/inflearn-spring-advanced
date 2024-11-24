@@ -13,7 +13,7 @@ import org.springframework.stereotype.Service;
 public class OrderServiceV3 {
 
     private final OrderRepositoryV3 orderRepositoryV3;
-    private final FieldLogTrace trace;
+    private final LogTrace trace;
 
     public void orderItem(String itemId){
         TraceStatus status=null;

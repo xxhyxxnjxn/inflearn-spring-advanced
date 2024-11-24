@@ -12,7 +12,7 @@ import org.springframework.stereotype.Repository;
 @RequiredArgsConstructor
 public class OrderRepositoryV3 {
 
-    private final FieldLogTrace trace;
+    private final LogTrace trace;
 
     public void save(String itemId){
 
