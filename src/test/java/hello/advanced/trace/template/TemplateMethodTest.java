@@ -2,6 +2,7 @@ package hello.advanced.trace.template;
 
 import hello.advanced.trace.template.code.AbstractTemplate;
 import hello.advanced.trace.template.code.SubClassLogic1;
+import hello.advanced.trace.template.code.SubClassLogic2;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 
@@ -43,6 +44,28 @@ public class TemplateMethodTest {
         template1.execute();
 
         AbstractTemplate template2 = new SubClassLogic1();
+        template2.execute();
+    }
+
+    @Test
+    void templateMethodV2(){
+        //익명 내부 클래스 -> 따로 Sub클래스를 만들지 않아도 메서드에서 바로 구현할 수 있음
+        AbstractTemplate template1 = new AbstractTemplate() {
+            @Override
+            protected void call(){
+                log.info("비즈니스 로직 1 실행");
+            }
+        };
+        log.info("클래스 이름1 = {}",template1.getClass());
+        template1.execute();
+
+        AbstractTemplate template2 = new AbstractTemplate() {
+            @Override
+            protected void call(){
+                log.info("비즈니스 로직 1 실행");
+            }
+        };
+        log.info("클래스 이름1 = {}",template2.getClass());
         template2.execute();
     }
 }
